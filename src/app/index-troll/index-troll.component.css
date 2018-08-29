@@ -1,0 +1,118 @@
+body
+{
+  margin: 0 auto;
+  position: relative;
+  min-height:100%;
+  padding-bottom: 30px;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+html{
+  height:100%;
+}
+
+header
+{
+  background-color:lightseagreen;
+  height:120px;
+  text-align:center;
+}
+
+header
+{
+  padding:20px;
+}
+
+nav
+{
+  padding-top:30px;
+}
+
+nav a{
+  margin: 20px;
+  padding: 20px;
+  color: black;
+  text-decoration:none;
+}
+
+#main
+{
+  padding:30px;
+  text-align:center;
+}
+
+footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  padding: 20px;
+  bottom: 0;
+  background-color:lightgray;
+}
+
+p
+{
+  width:50%;
+  text-align:center;
+}
+
+footer div {
+  display: inline;
+  text-align:center;
+}
+
+#foot
+{
+  padding-left:50px;
+  text-align:center;
+}
+
+#logo
+{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation-name: logo;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+
+}
+
+#goll
+{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation-name: logo2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes logo {
+  0%   {left:-100px; top:0px;}
+  25%  { left:1000px; top:0px;}
+  50%  {left:1000px; top:4500px;}
+  75%  {left:-100px; top:4500px;}
+  100% { left:-100px; top:0px;}
+}
+
+@keyframes logo2 {
+  0%   {left:1000px; top:0px;}
+  25%  { left:1000px; top:4500px;}
+  50%  {left:-100px; top:4500px;}
+  75%  {left:-100px; top:0px;}
+  100% { left:1000px; top:0px;}
+}
+
+@keyframes gollie {
+  0%   {left:1000px; top:0px;}
+  25%  {left:1000px; top:0px;}
+  50%  {left:-100px; top:2400px;}
+  75%  {left:-100px; top:0px;}
+  100% { left:-100px; top:0px;}
+}
+
+

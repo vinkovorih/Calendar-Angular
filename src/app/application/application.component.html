@@ -1,0 +1,203 @@
+<div id = "main">
+  <header>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img style="width:1300px; height:195px;" src="../../assets/Pictures/argus_banner2.jpg" >
+        </div>
+        <div class="carousel-item">
+          <img style="width:1300px; height:195px;" src="../../assets/Pictures/Banner_no_text-01.jpg">
+        </div>
+        <div class="carousel-item">
+          <img style="width:1300px; height:195px;" src="../../assets/Pictures/ToS_Cleared_2-01.jpg">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-sm navbar" id="navBar">
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item">
+
+        <a id="homeNav" class="nav-link" routerLink="">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/aboutUs">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/roster">Roster</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/spreadsheet">Raiders Spreadsheet</a>
+      </li>
+      <li><a class="nav-link" target="_blank" href="https://www.warcraftlogs.com/guild/id/238024">Logs</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://pescorus.eu/forums/" target="_blank">Forums</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li><a class="nav-link" routerLink="/application">Apply</a></li>
+
+    </ul>
+  </nav>
+
+  <div class="section">
+    <div style="padding-top:20px;" id="emailnote">
+        <b>NOTE</b>: There is a chance an application doesn't go through depending on the email that's been used for it. Yahoo unfortunately doesn't work for example. Below is the list of emails that we know work fine, so if possible and available to you, try to use one of them. Thank you!
+        <br>
+      <ul>
+        <li>
+          Gmail
+        </li>
+        <li>
+          Hotmail
+        </li>
+        <li>
+          Live
+        </li>
+        <li>
+          Web
+        </li>
+        <li>
+          Googlemail
+        </li>
+        <li>
+          Outlook
+        </li>
+      </ul>
+    </div>
+    <form (ngSubmit)="this.applicate()">
+      <div id="begin">
+        <div class="form-group">
+          <label for="email">Your E-mail</label>
+          <input type="email" class="form-control" style="width:250px;" id="email" placeholder="" name="email" [(ngModel)]="application.email" required>
+        </div>
+        <div class="form-group" style="display:inline-block; float:left; padding-right:10px;">
+          <label for="name" >Name</label>
+          <input type="text" class="form-control" style="width:200px;" id="name" name="name" [(ngModel)]="application.name" placeholder="" required>
+        </div>
+        <div class="form-group">
+          <label for="age" id="q2">Age</label>
+          <input type="text" class="form-control" style="width:110px;" id="age" name="age" [(ngModel)]="application.age" placeholder="Enter age" required>
+        </div>
+        <div class="form-group">
+          <label for="country" id="q3">Country</label>
+          <select id="country" name="country" style="width:250px;" class="form-control" [(ngModel)]="application.country" required>
+            <option *ngFor="let country of this.countries" [value]="country.value">{{country.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="name" >Character Name</label>
+          <input type="text" class="form-control" style="width:200px;" id="cname" name="cname" placeholder="" [(ngModel)]="application.cname" required>
+        </div>
+        <div class="form-group" style="display:inline-block; float:left; padding-right:10px;">
+          <label for="class" >Class</label>
+          <input type="text" class="form-control" style="width:200px;" id="class" name="class" placeholder="" [(ngModel)]="application.class" required>
+        </div>
+        <div class="form-group">
+          <label for="role" >Raid Role</label>
+          <input type="text" class="form-control" style="width:200px;" id="role" name="role" placeholder="" [(ngModel)]="application.rrole" required>
+        </div>
+        <div class="form-group">
+          <label for="name" id="btagq">Battle tag</label>
+          <input type="text" class="form-control" style="width:200px;" id="btag" name="btag" placeholder="" [(ngModel)]="application.btag" required>
+        </div>
+      </div>
+
+      <hr>
+      <div class="form-group">
+        <label for="armoryURL" id="q6">Armory Link</label>
+        <input type="url" class="form-control" id="armoryURL" placeholder="Paste a link" name="armoryURL" [(ngModel)]="application.alink" required>
+      </div>
+      <div class="form-group">
+        <label for="tosLOGS" id="q7">Antorus logs</label>
+        <input type="url" class="form-control" id="tosLOGS" name="tosLOGS" placeholder="Paste a link" [(ngModel)]="application.alogs" required>
+      </div>
+
+      <div class="form-group">
+        <label for="fps" id="q4">Hardware Specifics</label>
+        <input type="text" class="form-control" id="fps" placeholder="Enter answer" name="fps" [(ngModel)]="application.hardware" required>
+      </div>
+      <div class="form-group">
+        <label for="speedtest" id="q5">Please provide a screenshot of your internet speed. A speedtest can be found <a href="http://beta.speedtest.net/" target="_blank">HERE.</a></label><br>
+        <input type="url" class="form-control" id="speedtest" name="speedtest" placeholder="Paste img link" [(ngModel)]="application.speedtest" required>
+      </div>
+
+      <div class="form-group">
+        <label for="ui" id="q8">Screenshot of your UI during raid combat</label>
+        <input type="url" class="form-control" id="ui" name="ui" placeholder="Paste img link" [(ngModel)]="application.ui" required>
+      </div>
+      <div class="form-group">
+        <label for="knowledge" >Describe your knowledge of the class and the resources you use to improve</label>
+        <textarea class="form-control" id="knowledge" rows="3" placeholder="Write here" name="knowledge" [(ngModel)]="application.knowledge" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="offSpec" id="q9">Do you have an off spec prepared for raiding? </label>
+        <textarea class="form-control" id="offSpec" rows="3" placeholder="Write here" name="offSpec" [(ngModel)]="application.offspec" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="alts" id="q10" >Do you have any alts?</label>
+        <textarea class="form-control" id="alts" rows="3" placeholder="Write here" name="alts" [(ngModel)]="application.alts" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="altsInfo" id="q11">How much do you play them?</label>
+        <textarea class="form-control" id="altsInfo" rows="3" placeholder="Write here" name="altsInfo" [(ngModel)]="application.timealts" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="altsInfo2" id="q12">Would you ever consider rerolling if it would favour the guild? </label>
+        <textarea class="form-control" id="altsInfo2" rows="3" placeholder="Write here" name="altsInfo2" [(ngModel)]="application.rerollopt" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="expectations" id="q13">What do you expect from the guild with regards to raiding?</label>
+        <textarea class="form-control" id="expectations" rows="3" placeholder="Write here" name="expectations" [(ngModel)]="application.expectation" required> </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="active" id="q15">How active are you outside of raid enviroment?</label>
+        <textarea class="form-control" id="active" rows="3" placeholder="Write here" name="active" [(ngModel)]="application.activity" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="attitude" >What is your attitude towards raiding? </label>
+        <textarea class="form-control" id="attitude" rows="3" placeholder="Write here" name="attitude" [(ngModel)]="application.attitude" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exp" >Please list your previous raiding experience, starting from level 60 - Only mention kills made before the release of the following tier.
+        </label>
+        <textarea class="form-control" id="exp" rows="3" placeholder="Write here" name="exp" [(ngModel)]="application.raidexp" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="fight" >What is the most interesting raid fight you have faced, and why? </label>
+        <textarea class="form-control" id="fight" rows="3" placeholder="Write here" name="fight" [(ngModel)]="application.mir" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="raidt" >Confirm you know our rading times and that they are suitable for you: </label>
+        <textarea class="form-control" id="raidt" rows="3" placeholder="Write here" name="raidt" [(ngModel)]="application.confirm" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="leaving" >What is/was the reason for leaving your current/last guild?
+        </label>
+        <textarea class="form-control" id="leaving" rows="3" placeholder="Write here" name="leaving" [(ngModel)]="application.leaving" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="addit" >Why do you think you can be an addition to Pescorus? </label>
+        <textarea class="form-control" id="addit" rows="3" placeholder="Write here" name="addit" [(ngModel)]="application.addit" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="why" >Why did you choose to apply to Pescorus?
+        </label>
+        <textarea class="form-control" id="why" rows="3" placeholder="Write here" name="why" [(ngModel)]="application.why" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="last" >Any last thoughts? (This is your chance to impress us – First impressions only happen once)
+        </label>
+        <textarea class="form-control" id="last" rows="3" placeholder="Write here" name="last" [(ngModel)]="application.last" required></textarea>
+      </div>
+
+
+
+      <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+  </div>
+</div>
+

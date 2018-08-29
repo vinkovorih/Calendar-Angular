@@ -1,0 +1,125 @@
+<div id="main">
+
+
+  <header>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img style="width:1300px; height:195px;" src="../../assets/Pictures/argus_banner2.jpg" >
+        </div>
+        <div class="carousel-item">
+          <img style="width:1300px; height:195px;" src="../../assets/Pictures/Banner_no_text-01.jpg">
+        </div>
+        <div class="carousel-item">
+          <img style="width:1300px; height:195px;" src="../../assets/Pictures/ToS_Cleared_2-01.jpg">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <app-header></app-header>
+
+  <div class="container">
+    <table style="float:left;">
+      <thead>
+      <tr>
+        <th>TANKS</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pImage" *ngFor="let tanks of groupBy(this.roster,'tank')">
+          <div class="card-container">
+            <div class="card dk">
+              <div class="side"><img class="armor" [src]="tanks.logo"></div>
+              <div class="side back">
+                <a *ngIf="tanks.admin" routerLink="indexTroll" target="_blank"> <img style="margin-top:1px;" class="cardImage" src="../../assets/Pictures/if_China_flat_92022.png"></a>
+                <a><img class="cardImage" src="../../assets/Pictures/GlitchIcon_White_24px.png"></a>
+                <a [href]="tanks.wowcharacter" target="_blank"><img class="cardImage" src="../../assets/Pictures/armory.png"></a>
+                <a [href]="tanks.wowlogslink" target="_blank"><img class="cardImage" src="../../assets/Pictures/warcraftlog-logo.png"></a>
+              </div>
+            </div>
+          </div>
+          <p style="color:red; margin-top:5px;">{{tanks.nickname}}</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <table style="float:left; margin-left:20px;">
+      <thead>
+      <tr>
+        <th>HEALERS</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pImage" *ngFor="let healer of groupBy(this.roster,'healer')">
+          <div class="card-container">
+            <div class="card monk">
+              <div class="side"><img class="armor" [src]="healer.logo"></div>
+              <div class="side back">
+                <img class="cardImage" src="../../assets/Pictures/if_United-Kingdom_flat_92402.png">
+                <a><img class="cardImage" src="../../assets/Pictures/GlitchIcon_White_24px.png"></a>
+                <a [href]="healer.wowcharacter" target="_blank"><img class="cardImage" src="../../assets/Pictures/armory.png"></a>
+                <a [href]="healer.wowlogslink" target="_blank"><img class="cardImage" src="../../assets/Pictures/warcraftlog-logo.png"></a>
+              </div>
+            </div>
+          </div>
+          <p style="color:#00FF96; margin-top:5px;">{{healer.nickname}}</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+      <tr>
+        <th>MELEE</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pImage" *ngFor="let melee of groupBy(this.roster,'melee')">
+          <div class="card-container">
+            <div class="card shaman">
+              <div class="side"><img class="armor" [src]="melee.logo"></div>
+              <div class="side back">
+                <img class="cardImage" src="../../assets/Pictures/if_Croatia_flat_92040.png">
+                <a [href]="melee.twitch" target="_blank"><img class="cardImage" src="../../assets/Pictures/GlitchIcon_Purple_24px.png"></a>
+                <a [href]="melee.wowcharacter" target="_blank"><img class="cardImage" src="../../assets/Pictures/armory.png"></a>
+                <a [href]="melee.wowlogslink" target="_blank"><img class="cardImage" src="../../assets/Pictures/warcraftlog-logo.png"></a>
+              </div>
+            </div>
+          </div>
+          <p style="color:#2359ff; margin-top:5px;">{{melee.nickname}}</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <table>
+      <tr>
+        <th>RANGED</th>
+      </tr>
+      <tbody>
+      <tr>
+        <td class="pImage" *ngFor="let ranged of groupBy(this.roster,'ranged')">
+          <div class="card-container">
+            <div class="card hunter">
+              <div class="side"><img class="armor" [src]="ranged.logo"></div>
+              <div class="side back">
+                <img class="cardImage" src="../../assets/Pictures/if_Sweden_flat_92366.png">
+                <a [href]="ranged.twitch"><img class="cardImage" src="../../assets/Pictures/GlitchIcon_Purple_24px.png"></a>
+                <a [href]="ranged.wowcharacter" target="_blank"><img class="cardImage" src="../../assets/Pictures/armory.png"></a>
+                <a [href]="ranged.wowlogslink" target="_blank"><img class="cardImage" src="../../assets/Pictures/warcraftlog-logo.png"></a>
+              </div>
+            </div>
+          </div>
+          <p style="color:#aad372; margin-top:5px;">{{ranged.nickname}}</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+</div>
